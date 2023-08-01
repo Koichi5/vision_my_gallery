@@ -10,12 +10,32 @@ import SwiftUI
 @main
 struct VisionMyGalleryApp: App {
     var body: some Scene {
-        WindowGroup {
+        WindowGroup(id: "Main") {
             ContentView()
         }
 
-        ImmersiveSpace(id: "ImmersiveSpace") {
-            ImmersiveView()
-        }.immersionStyle(selection: .constant(.full), in: .full)
+        ImmersiveSpace(id: "airplane") {
+            AirplaneView()
+        }
+        
+        ImmersiveSpace(id: "gaming_room") {
+            GamingRoomView()
+        }
+        
+        ImmersiveSpace(id: "helicopter") {
+            HelicopterView()
+        }
+        
+        ImmersiveSpace(id: "house") {
+            HouseView()
+        }
+        
+        ImmersiveSpace(id: "rose") {
+            RoseView()
+        }
+        
+        ImmersiveSpace(id: "snow_house") {
+            SnowHouseView()
+        }
     }
 }
