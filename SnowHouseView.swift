@@ -11,7 +11,7 @@ import RealityKitContent
 
 struct SnowHouseView: View {
     @Environment(\.dismissWindow) var dismissWindow
-    @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
+    @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
 
     var body: some View {
         VStack {
@@ -30,7 +30,7 @@ struct SnowHouseView: View {
             }) {
                 Text("Back")
             }
-            .position(CGPoint(x: 0, y: 150))
+            Spacer()
         }
     }
 }
