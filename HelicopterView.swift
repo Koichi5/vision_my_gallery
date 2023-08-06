@@ -1,10 +1,3 @@
-//
-//  HelicopterView.swift
-//  VisionMyGallery
-//
-//  Created by Koichi Kishimoto on 2023/08/01.
-//
-
 import SwiftUI
 import RealityKit
 import RealityKitContent
