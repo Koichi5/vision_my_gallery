@@ -3,17 +3,16 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
-    @State var showImmersiveSpace = false
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
-    let images = ["airplane", "gaming_room", "helicopter", "house", "rose", "snow_house"]
+//    let images = ["airplane", "gaming_room", "helicopter", "house", "rose", "snow_house"]
 
     var body: some View {
         NavigationSplitView {
             List {
-                Text("Item")
+                Text("Item List")
             }
-            .navigationTitle("Wellcome to My Gallery !")
+            .navigationTitle("Hello World !")
         } detail: {
             ScrollView() {
                 LazyVGrid(
@@ -21,21 +20,28 @@ struct ContentView: View {
                     alignment: .center,
                     spacing: 4
                 ) {
-                    ForEach(images, id: \.self) { imageName in
-                        Color.black
-                            .aspectRatio(1, contentMode: .fill)
-                            .overlay(
-                                Image(imageName)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .onTapGesture {
-                                        Task {
-                                            await openImmersiveSpace(id: imageName)
-                                        }
-                                        print(imageName)
-                                    }
-                            )
-                            .clipped()
+                    Image("airplane")
+                        .resizable()
+                        .scaledToFill()
+                        .onTapGesture {
+                            Task {
+                                await openImmersiveSpace(id: "airplane")
+                        }
+//                    ForEach(images, id: \.self) { imageName in
+//                        Color.black
+//                            .aspectRatio(1, contentMode: .fill)
+//                            .overlay(
+//                                Image(imageName)
+//                                    .resizable()
+//                                    .scaledToFill()
+//                                    .onTapGesture {
+//                                        Task {
+//                                            await openImmersiveSpace(id: imageName)
+//                                        }
+//                                        print(imageName)
+//                                    }
+//                            )
+//                            .clipped()
                     }
                 }
             }
